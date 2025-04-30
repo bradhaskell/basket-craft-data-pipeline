@@ -8,7 +8,7 @@
 #%%
 # Import necessary libraries
 import pandas as pd
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 import os
 from dotenv import load_dotenv
 
@@ -49,8 +49,8 @@ df
 # %%
 # Write DataFrame to products table in Postgres (raw schema)
 with pg_engine.begin() as conn:
-    conn.execute(text("TRUNCATE TABLE raw.products"))
-df.to_sql('products', pg_engine, schema='raw', if_exists='append', index=False)
+    conn.execute(text("TRUNCATE TABLE raw.orders"))
+df.to_sql('orders', pg_engine, schema='raw', if_exists='append', index=False)
 
 # %%
 print(f'{len(df)} records loaded into Postgres raw.orders table.')

@@ -8,7 +8,7 @@
 #%%
 # Import necessary libraries
 import pandas as pd
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 import os
 from dotenv import load_dotenv
 
