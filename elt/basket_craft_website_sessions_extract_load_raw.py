@@ -41,7 +41,7 @@ pg_engine = create_engine(pg_conn_str)
 
 # %%
 # Display the first few rows of the DataFrame
-df = pd.read_sql('SELECT * FROM website_sessions', mysql_engine)
+df = pd.read_sql("SELECT * FROM website_sessions WHERE created_at BETWEEN '2023-12-01' AND '2023-12-31 23:59:59';", mysql_engine)
 
 # %%
 df
