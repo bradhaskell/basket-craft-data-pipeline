@@ -6,7 +6,7 @@ stg_website_sessions AS (
        website_session_id,
        created_at AS website_session_created_at,
        user_id,
-       is_repeat_session,,
+       is_repeat_session,
        utm_source,
        utm_campaign,
        device_type,
